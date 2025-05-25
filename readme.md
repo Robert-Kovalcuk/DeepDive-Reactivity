@@ -4,7 +4,7 @@
 
 Core-Reactivity is a standalone reactivity system built from scratch using TypeScript. This project was undertaken as a deep dive into the fundamental mechanics of modern frontend frameworks like Vue.js, aiming to understand and implement core concepts such as Proxy-based reactivity, dependency tracking, computed properties, reactive references, and efficient update batching via a microtask-based scheduler.
 
-The primary motivation is educational: to deconstruct and rebuild these complex patterns to achieve a master-level understanding of JavaScript, TypeScript, and framework internals.
+The primary motivation is educational: to deconstruct and rebuild these complex patterns to achieve a high understanding of JavaScript, TypeScript, and framework **internals**.
 
 ## ✨ Features
 
@@ -21,16 +21,7 @@ The primary motivation is educational: to deconstruct and rebuild these complex 
 To use the library, import the necessary functions from the core entry point:
 
 ```typescript
-// Assuming your entry point is 'core/index.ts' or similar
-// For example, if used as a local package or after building:
-// import { reactive, ref, computed, effect } from 'core-ts-reactivity';
-
-// For local testing, you might import directly from your build output or source:
 import { reactive, ref, computed, effect } from './core'; // Adjust path as needed
-
-ref(initialValue)
-
-//Creates a reactive reference.
 
 const count = ref(0);
 const message = ref('Hello');
@@ -48,9 +39,6 @@ message.value = 'World';
 ```
 
 ```typescript
-reactive(object)
-
-//Creates a deeply reactive proxy of an object.
 
 const user = reactive({
   firstName: 'John',
@@ -71,9 +59,6 @@ user.address.city = 'Newville';
 // After microtask flush, Output: User: Jane Doe, City: Newville
 ```
 ```typescript
-computed(getterFn)
-
-//Creates a reactive value that is derived from other reactive state.
 
 const num1 = ref(5);
 const num2 = ref(10);
@@ -99,9 +84,6 @@ num1.value = 7;
 // Sum is: 17
 ```
 ```typescript
-effect(id, fn)
-    
-//Registers a function to track reactive dependencies and re-run on changes.
 
 const isActive = ref(true);
 const data = reactive({ value: 'Initial Data' });
